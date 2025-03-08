@@ -1,0 +1,144 @@
+body {
+    height: 100vh;
+    background-color: #f2f2f2;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    padding-right: 5rem;
+    padding-left: 2rem;
+    background: white;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 3rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #222222;
+    font-size: 17px;
+    font-weight: 600;
+    transition: all;
+    -webkit-transition: all;
+    -moz-transition: all;
+    -ms-transition: all;
+    -o-transition: all;
+    transition-duration: 0.3s;
+    border-bottom: 2px solid #22222200;
+}
+
+nav ul li a:hover {
+    border-bottom: 2px solid #222222;
+}
+
+nav ul ul {
+    display: none;
+    position: absolute;
+    background: white;
+}
+
+nav ul li:hover > ul {
+    display: block;
+}
+
+nav ul ul li {
+    width: 170px;
+    float: none;
+    display: list-item;
+    position: relative;
+    margin: 10px;
+}
+
+.calculator {
+    max-width: 530px;
+    background-color: #535353;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 100px auto;
+    text-align: center;
+    color: white;
+}
+
+input[type="text"] {
+    width: 90%;
+    height: 35px;
+    border-radius: 5px;
+    background-color: #333333;
+    border: 0px;
+    color: #d9d9d9;
+    padding: 0 8px 0 8px;
+    margin-bottom: 20px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.calc-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.button {
+    margin: 3px;
+    width: 63px;
+    border: none;
+    height: 25px;
+    border-radius: 4px;
+    color: #000000;
+    cursor: pointer;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+
+.button:hover {
+    background-color: hsla(180, 100%, 40%, 0.3);
+    transition: .2s;
+    -webkit-transition: .2s;
+    -moz-transition: .2s;
+    -ms-transition: .2s;
+    -o-transition: .2s;
+}
+
+.functions-one {
+    width: 210px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.functions-two {
+    width: 280px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.triggers {
+    background-color: #ffc266;
+}
+
+.numbers {
+    background-color: #999999;
+}
+
+.basic-stuff {
+    background-color: #80d4ff;
+}
+
+.complex-stuff {
+    background-color: #80ffff;
+}

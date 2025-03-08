@@ -1,0 +1,153 @@
+body {
+    background-color: #f2f2f2;
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    padding-right: 5rem;
+    padding-left: 2rem;
+    background: white;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 3rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #222222;
+    font-size: 17px;
+    font-weight: 600;
+    transition: all;
+    -webkit-transition: all;
+    -moz-transition: all;
+    -ms-transition: all;
+    -o-transition: all;
+    transition-duration: 0.3s;
+    border-bottom: 2px solid #22222200;
+}
+
+nav ul li a:hover {
+    border-bottom: 2px solid #222222;
+}
+
+nav ul ul {
+    display: none;
+    position: absolute;
+    background: white;
+}
+
+nav ul li:hover > ul {
+    display: block;
+}
+
+nav ul ul li {
+    width: 170px;
+    float: none;
+    display: list-item;
+    position: relative;
+    margin: 10px;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
+    width: 50rem;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #333;
+}
+
+.form-group {
+    text-align: left;
+    margin-bottom: 14px;
+}
+
+label {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+select, input {
+    width: 100%; /* Menyamakan lebar input dan select */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+    display: block;
+    box-sizing: border-box; /* Pastikan ukuran tetap seimbang */
+}
+
+.result-container {
+    margin-top: 15px;
+}
+
+.result-box {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px;
+    padding: 10px;
+    background: #f9f9f9;
+    border-left: 4px solid #007BFF;
+    text-align: left;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.btn {
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+    width: 48%;
+}
+
+.reset {
+    background-color: #dc3545;
+    color: white;
+}
+
+.reset:hover {
+    background-color: #c82333;
+}
+
+.hitung {
+    background-color: #007BFF;
+    color: white;
+}
+
+.hitung:hover {
+    background-color: #0056b3;
+}

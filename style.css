@@ -1,0 +1,58 @@
+body {
+    width: 100%;
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f4f4;
+}
+
+.judul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.judul h1 {
+    margin-top: 75px;
+    font-weight: 700;
+}
+
+#page-login {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+}
+
+#page-login input {
+    padding: 10px;
+    margin: 16px;
+    width: 25%;
+    border: none;
+    border-bottom: 1px solid #000;
+    outline: none;
+    padding: 5px;
+    width: 50%;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    background: #f4f4f4;
+}
+
+input::placeholder {
+    text-align: center;
+    color: #aaa;
+}
+
+#page-login button {
+    border: none;
+    background-color: #f4f4f4;
+    margin-top: 16px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+#page-login button a {
+    color: black;
+    text-decoration: none;
+}

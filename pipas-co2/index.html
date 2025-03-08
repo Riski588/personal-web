@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Jejak Karbon</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="/landing-page/index.html">Home</a></li>
+            <li><a href="#">About Me</a></li>
+            <li><a href="#">Projects</a>
+                <ul>
+                    <li><a href="/pipas-kenakalan-remaja/index.html">Pipas, Kenakalan Remaja</a></li>
+                    <li><a href="/pipas-co2/index.html">Pipas, CO2</a></li>
+                    <li><a href="/sunda-kampung-adat/index.html">Sunda</a></li>
+                    <li><a href="/mtk-kalkulator/index.html">MTK, Kalkulator</a></li>
+                    <li><a href="/mtk-kalkulator-g-a/index.html">MTK, Geometri</a></li>
+                    <li><a href="/sejarah/index.html">Sejarah</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Skills</a></li>
+            <li><a href="#">Sertifikat</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="box">
+        <div class="container">
+            <h2>Kalkulator Jejak Karbon</h2>
+
+            <div class="form-group">
+                <label>Jenis Peralatan Listrik *</label>
+                <select id="jenis">
+                    <option value="" disabled selected>Pilih Peralatan</option>
+                    <option value="80">Lampu LED (80W)</option>
+                    <option value="200">TV LED (200W)</option>
+                    <option value="350">Kulkas (350W)</option>
+                    <option value="900">AC (900W)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Jumlah Satuan *</label>
+                <input type="number" id="jumlah" placeholder="Jumlah Satuan" min="1">
+            </div>
+
+            <div class="form-group">
+                <label>Lama Penggunaan *</label>
+                <input type="number" id="lama" placeholder="Jam/Hari" min="1">
+            </div>
+
+            <div class="form-group">
+                <label>Pilih Periode Hasil</label>
+                <select id="periode" onchange="updateHasil()">
+                    <option value="1">Per Hari</option>
+                    <option value="30">Per Bulan</option>
+                    <option value="365">Per Tahun</option>
+                </select>
+            </div>
+
+            <div class="result-container" id="result-container"></div>
+
+            <div class="button-group">
+                <button class="btn reset" onclick="resetForm()">Reset</button>
+                <button class="btn hitung" onclick="hitungJejakKarbon()">Hitung</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let totalEnergi = 0;
+        let totalKarbon = 0;
+
+        function hitungJejakKarbon() {
+            let jenis = document.getElementById("jenis");
+            let jumlah = document.getElementById("jumlah").value;
+            let lama = document.getElementById("lama").value;
+
+            if (!jenis.value || jumlah <= 0 || lama <= 0) {
+                alert("Harap isi semua bidang dengan benar!");
+                return;
+            }
+
+            let daya = parseFloat(jenis.value);
+            jumlah = parseFloat(jumlah);
+            lama = parseFloat(lama);
+            let faktorEmisi = 0.85;
+
+            let energi = (daya * jumlah * lama) / 1000;
+            let karbon = energi * faktorEmisi;
+
+            totalEnergi += energi;
+            totalKarbon += karbon;
+
+            updateHasil();
+
+            document.getElementById("jenis").value = "";
+            document.getElementById("jumlah").value = "";
+            document.getElementById("lama").value = "";
+        }
+
+        function updateHasil() {
+            let periode = parseFloat(document.getElementById("periode").value);
+            let resultContainer = document.getElementById("result-container");
+
+            let energiFinal = totalEnergi * periode;
+            let karbonFinal = totalKarbon * periode;
+
+            resultContainer.innerHTML = `
+                <div class="result-box">
+                    ⚡ Total Konsumsi Energi: <strong>${energiFinal.toFixed(2)} kWh</strong><br>
+                    🌱 Total Jejak Karbon: <strong>${karbonFinal.toFixed(2)} kg CO₂</strong>
+                </div>
+            `;
+        }
+
+        function resetForm() {
+            document.getElementById("result-container").innerHTML = "";
+            totalEnergi = 0;
+            totalKarbon = 0;
+        }
+    </script>
+</body>
+
+</html>
