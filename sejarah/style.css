@@ -58,3 +58,9 @@ nav ul ul li {
     position: relative;
     margin: 10px;
 }
+
+p {
+    text-align: justify;
+    width: 90%;
+    margin: 0 auto;
+}
